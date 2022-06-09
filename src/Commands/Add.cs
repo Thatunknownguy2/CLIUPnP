@@ -41,13 +41,13 @@ namespace CLIPnP.Commands
                     return;
             }
 
-            if (!int.TryParse(args[2], out int internalPort))
+            if (!int.TryParse(args[2], out int internalPort) || internalPort > 65535)
             {
                 Console.WriteLine("Invalid internal port!");
                 return;
             }
 
-            if (!int.TryParse(args[3], out int externalPort))
+            if (!int.TryParse(args[3], out int externalPort) || externalPort > 65535)
             {
                 Console.WriteLine("Invalid external port!");
                 return;
